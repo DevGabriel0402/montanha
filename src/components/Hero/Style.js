@@ -3,12 +3,12 @@ import Montanha from "../../assets/Montanha.webp";
 
 export const Container = styled.div`
   width: 100%;
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background: url(${Montanha}) center/contain no-repeat;
+  background: url(${Montanha}) center/cover no-repeat;
   overflow: hidden;
   position: relative;
 
@@ -25,11 +25,11 @@ export const Container = styled.div`
     position: absolute;
     width: auto;
     z-index: 1;
-    height: 350px;
+    height: 400px;
     overflow-x: hidden;
 
     @media (max-width: 768px) {
-      height: 350px;
+      height: 450px;
       width: auto;
     }
   }

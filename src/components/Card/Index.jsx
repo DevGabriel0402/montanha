@@ -11,14 +11,13 @@ export const Card = ({ produto, titulo }) => {
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={20}
-        slidesPerView={4}
         loop={true}
         pagination={{ enabled: true, dynamicBullets: true }}
         navigation={true}
         breakpoints={{
           500: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
         }}
       >
         {produto.map((item) => (
@@ -75,8 +74,8 @@ export const Container = styled.div`
   }
 
   .swiper-slide img {
-    /* width: 100%; */
-    max-width: 320px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 18px;
     aspect-ratio: 1/1;
     object-fit: cover;
