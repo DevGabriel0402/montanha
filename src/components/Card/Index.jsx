@@ -26,6 +26,7 @@ export const Card = ({ produto, titulo }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <button>Agendar um horário</button>
     </Container>
   );
 };
@@ -108,5 +109,18 @@ export const Container = styled.div`
   .swiper-button-prev,
   .swiper-button-next {
     color: #fff;
+  }
+
+  button {
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #fafafa;
+    border: none;
+    color: #0b0b0b;
+    border-radius: 8px;
+    padding: 8px 16px;
   }
 `;

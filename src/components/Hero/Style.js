@@ -3,7 +3,7 @@ import Montanha from "../../assets/Montanha.webp";
 
 export const Container = styled.div`
   width: 100%;
-  height: 400px;
+  height: 375px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -11,6 +11,15 @@ export const Container = styled.div`
   background: url(${Montanha}) center/cover no-repeat;
   overflow: hidden;
   position: relative;
+
+  .container-foto {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
 
   .sombra {
     position: absolute;
@@ -21,10 +30,10 @@ export const Container = styled.div`
     background: linear-gradient(to top, #000 0%, transparent 100%);
   }
 
-  img {
+  .montanha {
     position: absolute;
     width: auto;
-    z-index: 1;
+    z-index: 5;
     height: 400px;
     overflow-x: hidden;
 
@@ -32,5 +41,26 @@ export const Container = styled.div`
       height: 450px;
       width: auto;
     }
+  }
+
+  .maquina,
+  .piercing {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .maquina {
+    transform: translateY(-60px) translateX(40px);
+    filter: blur(2px);
+    z-index: 5;
+    width: 140px !important;
+  }
+
+  .piercing {
+    transform: translateY(-210px) translateX(240px);
+    width: 55px !important;
+    filter: blur(1px);
+    z-index: 1;
   }
 `;
