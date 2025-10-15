@@ -16,7 +16,7 @@ export const Card = ({ produto, titulo }) => {
         pagination={{ enabled: true, dynamicBullets: true }}
         navigation={true}
         breakpoints={{
-          320: { slidesPerView: 1 },
+          500: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
