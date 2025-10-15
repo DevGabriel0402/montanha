@@ -51,7 +51,7 @@ export const Container = styled.div`
   .maquina {
     transform: translateY(-60px) translateX(40px);
     filter: blur(2px);
-    z-index: 5;
+    z-index: 10;
     width: 140px !important;
   }
 
@@ -59,6 +59,6 @@ export const Container = styled.div`
     transform: translateY(-210px) translateX(240px);
     width: 55px !important;
     filter: blur(1px);
-    z-index: 1;
+    z-index: 10;
   }
 `;
