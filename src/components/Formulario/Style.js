@@ -3,18 +3,19 @@ import styled from "styled-components";
 export const FormContainer = styled.form`
   width: 100%;
   max-width: 400px;
-  padding: 24px;
+  padding: 28px;
   background: #18181b;
   border-radius: 20px;
-  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 2px;
 
   h2 {
     text-align: start;
     width: 100%;
+    font-size: 22px;
   }
 `;
 
@@ -33,7 +34,7 @@ export const Input = styled.input`
   background: #23232b;
   color: #fafafa;
   font-size: 1rem;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   outline: none;
   transition: border 0.2s;
   &:focus {
@@ -51,4 +52,37 @@ export const Button = styled.button`
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
+`;
+
+export const Select = styled.select`
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #23232b;
+  color: #fafafa;
+  font-size: 1rem;
+
+  option {
+    background: #23232b;
+    color: #fafafa;
+    border: 1px solid transparent;
+  }
+`;
+
+export const TextArea = styled.textarea`
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #23232b;
+  color: #fafafa;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border 0.2s;
+  margin-top: 8px;
+  &:focus {
+    border: 1.5px solid #ffffff92;
+  }
 `;

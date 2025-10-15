@@ -59,7 +59,6 @@ export const Modal = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
   z-index: 9999;
   backdrop-filter: blur(2px);
 
@@ -69,8 +68,8 @@ export const Modal = styled.div`
     border-radius: 20px;
     padding: 24px;
     min-width: 320px;
-    max-width: 95vw;
-    max-height: 90dvh;
+    max-width: 100vw;
+    max-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,8 +79,8 @@ export const Modal = styled.div`
 
   .btn-fechar {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: -5px;
+    right: 10px;
     background: #ffffff;
     color: #0b0b0b;
     border: none;
@@ -108,7 +107,7 @@ export const Container = styled.div`
   width: 100%;
   border-radius: 24px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

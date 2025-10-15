@@ -1,20 +1,31 @@
 import { useState } from "react";
-import { FormContainer, Label, Input, Button } from "./Style";
+import { FormContainer, Label, Input, Button, Select, TextArea } from "./Style";
 
 export default function Formulario() {
   const [nome, setNome] = useState("");
   const [contato, setContato] = useState("");
+  const [horario, setHorario] = useState(null);
+  const [descricao, setDescricao] = useState("");
+
+  const opçoesHorario = ["Manhã", "Tarde", "Noite"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode enviar os dados ou tratar como quiser
+
     console.log("Nome:", nome);
     console.log("Contato:", contato);
+    console.log("Horário:", horario);
+    console.log("Descrição:", descricao);
+
+    setNome("");
+    setContato("");
+    setHorario(null);
+    setDescricao("");
   };
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <h2 style={{ fontSize: 22 }}>AGENDE UM HORÁRIO</h2>
+      <h2>AGENDE UM HORÁRIO</h2>
       <Input
         id="nome"
         placeholder="Informe seu nome..."
@@ -35,6 +46,22 @@ export default function Formulario() {
             e.preventDefault();
           }
         }}
+      />
+      <Select value={horario || ""} onChange={(e) => setHorario(e.target.value)}>
+        <option value="" disabled>
+          Escolha um horário
+        </option>
+        {opçoesHorario.map((item) => (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        ))}
+      </Select>
+      <TextArea
+        placeholder="Descreva sua tatuagem..."
+        rows={4}
+        value={descricao}
+        onChange={(e) => setDescricao(e.target.value)}
       />
       <Button type="submit">Enviar</Button>
     </FormContainer>
