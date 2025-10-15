@@ -3,14 +3,19 @@ import styled from "styled-components";
 export const FormContainer = styled.form`
   width: 100%;
   max-width: 400px;
-  margin: 32px auto;
-  padding: 32px 24px;
+  padding: 24px;
   background: #18181b;
   border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
+
+  h2 {
+    text-align: start;
+  }
 `;
 
 export const Label = styled.label`

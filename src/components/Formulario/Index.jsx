@@ -14,7 +14,7 @@ export default function Formulario() {
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <h2 style={{ width: "100%", fontSize: 22 }}>AGENDE UM HORÁRIO</h2>
+      <h2 style={{ fontSize: 22 }}>AGENDE UM HORÁRIO</h2>
       <Input
         id="nome"
         placeholder="Informe seu nome..."

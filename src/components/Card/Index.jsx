@@ -13,14 +13,13 @@ export const Card = ({ produto, titulo }) => {
     <Container>
       <h2>{titulo}</h2>
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Pagination]}
         spaceBetween={20}
         loop={true}
         pagination={{ enabled: true, dynamicBullets: true }}
-        navigation={true}
         breakpoints={{
           500: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
         }}
       >
@@ -33,10 +32,16 @@ export const Card = ({ produto, titulo }) => {
       <button onClick={() => setShowForm(true)}>Agendar um horário</button>
       {showForm && (
         <Modal>
-          <Formulario />
-          <button className="btn-fechar" onClick={() => setShowForm(false)}>
-            x
-          </button>
+          <div className="modal-content">
+            <button
+              className="btn-fechar"
+              aria-label="Fechar"
+              onClick={() => setShowForm(false)}
+            >
+              ×
+            </button>
+            <Formulario />
+          </div>
         </Modal>
       )}
     </Container>
@@ -47,31 +52,60 @@ import styled from "styled-components";
 
 export const Modal = styled.div`
   position: fixed;
-  height: 100vh;
-  width: 100vw;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
+
   z-index: 9999;
   backdrop-filter: blur(2px);
 
+  .modal-content {
+    position: relative;
+    background: #18181b;
+    border-radius: 20px;
+    padding: 24px;
+    min-width: 320px;
+    max-width: 95vw;
+    max-height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+  }
+
   .btn-fechar {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 16px;
+    right: 16px;
+    background: #ffffff;
+    color: #0b0b0b;
+    border: none;
+    text-align: center;
+    align-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
     z-index: 10000;
-    width: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .btn-fechar:hover {
+    background: #fff;
+    color: #ff0055;
+    border: 2px solid #ff0055;
   }
 `;
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1000px;
   border-radius: 24px;
   display: flex;
   gap: 12px;
