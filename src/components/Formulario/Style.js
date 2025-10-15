@@ -6,7 +6,6 @@ export const FormContainer = styled.form`
   padding: 24px;
   background: #18181b;
   border-radius: 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +14,7 @@ export const FormContainer = styled.form`
 
   h2 {
     text-align: start;
+    width: 100%;
   }
 `;
 
