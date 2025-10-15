@@ -1,10 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import Formulario from "../Formulario/Index";
+
 export const Card = ({ produto, titulo }) => {
+  const [showForm, setShowForm] = useState(false);
   return (
     <Container>
       <h2>{titulo}</h2>
@@ -26,12 +30,44 @@ export const Card = ({ produto, titulo }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <button>Agendar um horário</button>
+      <button onClick={() => setShowForm(true)}>Agendar um horário</button>
+      {showForm && (
+        <Modal>
+          <Formulario />
+          <button className="btn-fechar" onClick={() => setShowForm(false)}>
+            x
+          </button>
+        </Modal>
+      )}
     </Container>
   );
 };
 
 import styled from "styled-components";
+
+export const Modal = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+
+  .btn-fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    width: auto !important;
+  }
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -122,5 +158,6 @@ export const Container = styled.div`
     color: #0b0b0b;
     border-radius: 8px;
     padding: 8px 16px;
+    margin-bottom: 20px;
   }
 `;
